@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clockwork Eclipse</title>
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+  <header>
+    <h1>Clockwork Eclipse</h1>
+    <div class="controls">
+      <button id="start-btn" class="button">Start</button>
+      <button id="restart-btn" class="button secondary">Restart</button>
+    </div>
+  </header>
 
+  <div class="main-layout">
+    <section class="panel hud" aria-label="Heads up display">
+      <div class="hud-item">
+        <span class="label">Wave</span>
+        <span id="wave-value" class="value">1</span>
+      </div>
+      <div class="hud-item">
+        <span class="label">Core HP</span>
+        <span id="hp-value" class="value">100</span>
+      </div>
+      <div class="hud-item">
+        <span class="label">Breaches</span>
+        <span id="breach-value" class="value">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="label">Resources</span>
+        <span id="resource-value" class="value">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="label">Enemies</span>
+        <span id="enemy-value" class="value">0</span>
+      </div>
+    </section>
+
+    <section class="canvas-wrapper">
+      <canvas id="game-canvas" width="720" height="540" aria-label="Clockwork Eclipse Arena"></canvas>
+      <div id="upgrade-overlay" class="overlay">
+        <div class="panel upgrades">
+          <h3>Choose Your Upgrade</h3>
+          <p style="margin:8px 0 12px;">Select one plate to empower the core for the next wave.</p>
+          <div id="upgrade-grid" class="upgrade-grid"></div>
+        </div>
+      </div>
+      <div id="gameover-overlay" class="overlay">
+        <div class="panel">
+          <h3>Run Over</h3>
+          <p id="summary-text" style="margin:10px 0 14px;"></p>
+          <button id="play-again" class="button">Play Again</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel upgrades">
+      <h3 style="margin-bottom:8px; letter-spacing:0.12rem; text-transform:uppercase; color:var(--gold);">Next Upgrade</h3>
+      <p style="color:var(--teal); margin-bottom:8px;">Upgrades appear when a wave is cleared.</p>
+      <div id="upgrade-preview" class="upgrade-grid"></div>
+    </section>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
